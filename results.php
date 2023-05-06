@@ -13,7 +13,19 @@
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
-require_once "db.php";
+    
+    require_once "db.php";
+    if(isset($_GET['submit'])){
+        $stId= $_GET['st_id'];
+        $sql= "SELECT * FROM results WHERE st_id='$stId';";
+        $query= mysqli_query($conn, $sql);
+        if(mysqli_num_rows($query)>0){
+            $row = mysqli_fetch_assoc($query);
+            echo "Your Result is -> ".$row['result'];
+        }else{
+            echo "Wrong Student ID";
+        }
+    }
 
 ?>
 </body>
