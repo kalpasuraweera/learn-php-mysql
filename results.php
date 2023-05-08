@@ -25,6 +25,26 @@
         }else{
             echo "Wrong Student ID";
         }
+        
+        switch($row['result']){
+         case "A":
+            echo "Excellent";
+            break;
+        case "B":
+            echo "Good. Keep on working";
+            break;
+        case "C":
+            echo "Good. Need some improvement";
+            break;
+        case "S":
+            echo "Work hard to improve your result";
+            break;
+        case "F":
+            echo "Work hard";
+            break;
+
+
+        }
     }
 
 ?>
